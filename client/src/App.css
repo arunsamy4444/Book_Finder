@@ -1,0 +1,183 @@
+/* App.css - Dark Blue Fantasy Theme */
+:root {
+  --dark-bg: #0a0e17;
+  --darker-bg: #05080f;
+  --primary: #1a2b4d;
+  --accent: #3a5bc7;
+  --accent-glow: #4a7aff;
+  --text-primary: #e6e9f0;
+  --text-secondary: #a1a8c3;
+  --error: #ff4d7a;
+  --success: #4dffb8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--dark-bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.6;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(28, 58, 133, 0.15) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(58, 91, 199, 0.1) 0%, transparent 20%);
+  overflow-x: hidden;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header Styles */
+.app-header {
+  text-align: center;
+  padding: 2rem 0;
+  position: relative;
+}
+
+.app-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+.app-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, var(--text-primary), var(--accent-glow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(74, 122, 255, 0.3);
+  margin-bottom: 0.5rem;
+}
+
+/* Search Container */
+.search-container {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  position: relative;
+}
+
+/* Loading Animation */
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 2rem 0;
+  color: var(--accent);
+  position: relative;
+}
+
+.loading::after {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(74, 122, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--accent);
+  animation: spin 1s linear infinite;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Messages */
+.error-message {
+  text-align: center;
+  color: var(--error);
+  font-size: 1.1rem;
+  padding: 1rem;
+  background: rgba(255, 77, 122, 0.1);
+  border-left: 4px solid var(--error);
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+.no-results {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  margin: 3rem 0;
+  font-style: italic;
+}
+
+/* Book List Container */
+.book-list-container {
+  margin: 2rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-header h1 {
+    font-size: 2rem;
+  }
+  
+  .search-container {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header h1 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+  
+  .app {
+    padding: 0 0.5rem;
+  }
+  
+  .loading, .error-message, .no-results {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+  gap: 10px;
+}
+
+.pagination button {
+  padding: 8px 14px;
+  border: none;
+  background: #232f3e;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.2s ease;
+}
+
+.pagination button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-size: 1rem;
+  color: #333;
+}

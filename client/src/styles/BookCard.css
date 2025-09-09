@@ -1,4 +1,4 @@
-/* BookCard.css - Enhanced for full device responsiveness */
+/* 1. Base card styling: background, shadow, hover effects, flex layout, text colors */
 .book-card {
     background: linear-gradient(145deg, #1a2b4d, #0d1425);
     border-radius: 12px;

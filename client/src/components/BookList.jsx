@@ -3,6 +3,7 @@ import BookCard from "./BookCard";
 import "../styles/BookList.css";
 
 function BookList({ books }) {
+  // Return nothing if books array is empty or undefined
   if (!books || books.length === 0) {
     return null; // no need to render empty div
   }
@@ -16,4 +17,5 @@ function BookList({ books }) {
   );
 }
 
+// Export for use in parent component
 export default BookList;

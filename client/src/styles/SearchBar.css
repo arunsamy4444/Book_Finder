@@ -1,4 +1,4 @@
-/* SearchBar.css - Enhanced for full device responsiveness */
+/*  Layout & main styles: search bar container, input, and buttons */
 .search-bar {
     display: flex;
     position: relative;
@@ -59,6 +59,34 @@
 
 .search-button:active {
     transform: translateY(-50%) scale(0.95);
+}
+
+/* 3. Clear button styling: positioned, hover effect, visibility adjustments */
+.clear-button {
+  position: absolute;
+  right: 120px; 
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #a1a8c3;
+  font-size: 1.4rem; 
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  z-index: 2;
+}
+
+
+.clear-button:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 /* ===== ENHANCED RESPONSIVE DESIGN ===== */

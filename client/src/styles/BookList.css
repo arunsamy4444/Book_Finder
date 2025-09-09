@@ -1,4 +1,4 @@
-/* BookList.css - Enhanced for full device responsiveness */
+/* 1. Grid layout & main styling for book list container */
 .book-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));

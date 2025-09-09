@@ -2,11 +2,13 @@ import React from "react";
 import "../styles/BookCard.css";
 
 function BookCard({ book }) {
+  // Determine cover image URL or use placeholder
   const coverId = book.cover_i;
   const coverUrl = coverId
     ? `https://covers.openlibrary.org/b/id/${coverId}-M.jpg`
     : "https://via.placeholder.com/150x200?text=No+Cover";
 
+  // Link to book page on Open Library
   const bookUrl = `https://openlibrary.org${book.key}`;
 
   return (
@@ -17,7 +19,7 @@ function BookCard({ book }) {
         {book.author_name ? book.author_name.join(", ") : "Unknown Author"}
       </p>
       <p className="book-year">{book.first_publish_year || "N/A"}</p>
-   <a
+      <a
         href={bookUrl}
         target="_blank"
         rel="noopener noreferrer"

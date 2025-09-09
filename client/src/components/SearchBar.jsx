@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import "../styles/SearchBar.css";
 
-function SearchBar({ onSearch }) {
-  const [query, setQuery] = useState("");
+function SearchBar({ onSearch, onClear }) {
+  const [query, setQuery] = useState(""); // Track input value
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (query.trim() === "") return;
-    onSearch(query);
-    setQuery(""); // clear input after search (optional)
+    if (query.trim() === "") return; // Ignore empty searches
+    onSearch(query); // Call parent search function
+  };
+  // Clear input and notify parent
+  const handleClear = () => {
+    setQuery("");
+    if (onClear) onClear();
   };
 
   return (
@@ -20,9 +24,16 @@ function SearchBar({ onSearch }) {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
-      <button type="submit" className="search-button">
-        Search
-      </button>
+      <div className="button-group">
+        {query && (
+          <button type="button" className="clear-button" onClick={handleClear}>
+            ×
+          </button>
+        )}
+        <button type="submit" className="search-button">
+          Search
+        </button>
+      </div>
     </form>
   );
 }

@@ -1,4 +1,4 @@
-/* App.css - Dark Blue Fantasy Theme */
+/*  Root variables for theme colors and text styles */
 :root {
   --dark-bg: #0a0e17;
   --darker-bg: #05080f;
@@ -11,12 +11,14 @@
   --success: #4dffb8;
 }
 
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/*  Base styles for body and typography including background gradients */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: var(--dark-bg);
@@ -35,7 +37,7 @@ body {
   padding: 0 1rem;
 }
 
-/* Header Styles */
+/*  Header styling with gradient text and decorative underline */
 .app-header {
   text-align: center;
   padding: 2rem 0;
@@ -72,7 +74,7 @@ body {
   position: relative;
 }
 
-/* Loading Animation */
+/* 4. Loading, error, and no-results message styles */
 .loading {
   text-align: center;
   font-size: 1.2rem;
@@ -149,10 +151,7 @@ body {
   }
 }
 
-
-
-
-
+/*  Pagination styling: buttons, disabled state, and container layout */
 .pagination {
   display: flex;
   justify-content: center;
